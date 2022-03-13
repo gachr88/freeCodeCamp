@@ -1,2 +1,2 @@
 # freeCodeCamp
-Solutions for Javascript intermediate algorithm exercises 
+Solutions for Javascript algorithm exercises 
