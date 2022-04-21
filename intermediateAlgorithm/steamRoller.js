@@ -1,28 +1,23 @@
 function steamrollArray(arr) {
-    let newArr = [];
-    let i=0;
-    extract(arr, newArr)
-    //console.log(newArr)
-      
-    
-    return newArr;
-    
-  }
+  let flatArr = [];
   
-  function extract(val, acum)
-  {
-    
-    if(Array.isArray(val))
-    {
-      val.forEach(n => steamrollArray(n, acum))
-    }  
-    if((typeof val) === "number")
-    {    
-      acum = [...acum, val];    
-      console.log(val, acum)
-    }
-    //return val;   
-  }
+  flattenArray(arr, flatArr)              
+  return flatArr;
   
-  
-  steamrollArray([1, [2], [3, [[4]]]]);
+}
+
+function flattenArray(val, flatArr)
+{          
+  if(Array.isArray(val))
+  {      
+    val.forEach(n => flattenArray(n, flatArr))
+  }  
+
+  if(!Array.isArray(val))
+  {                       
+    flatArr.push(val)
+  }  
+}
+
+
+steamrollArray([[["a"]], [["b"]]]);
